@@ -21,7 +21,7 @@
             this.cells = this.board.getElementsByTagName("div");
             for (let i = 0; i < this.cells.length; i++) {
                 this.cells[i].addEventListener("click", function(event) {
-                    this.classList.add("live");
+                    this.classList.toggle("live");
                 });
             }
         };

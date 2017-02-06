@@ -12,7 +12,8 @@
         console.log(game);
 
         GameOfLife.prototype.createBoard = function() {
-
+            this.board.style.width = this.width * 10 + "px";
+            this.board.style.height = this.height * 10 + "px";
             const divsCount = this.width * this.height;
             for (let i = 0; i < divsCount; i++) {
                 this.board.appendChild(document.createElement("div"));

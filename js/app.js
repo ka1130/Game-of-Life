@@ -57,10 +57,20 @@
             let neighboursAlive = neighbours.filter(function(item) {
                 return item.classList.value === "live";
             });
-            console.dir(this.getCellIndex(x, y));
+            let thisAlive = this.getCellIndex(x, y).classList.value === "live";
+            console.log(thisAlive);
+            let livingCount = neighboursAlive.count();
+
+            if (livingCount < 2) {
+                return 0;
+            } else if ((livingCount === 2 && thisAlive === true) || livingCount === 3) {
+                return 1;
+            } else if (livingCount > 3) {
+                return 0;
+            }
+            console.dir(this.getCellIndex(x, y).classList.value);
             console.log(neighbours.count());
             console.log(neighboursAlive.count());
-            return neighboursAlive.count();
         }
 
         GameOfLife.prototype.computeNextGeneration = function() {

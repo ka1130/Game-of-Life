@@ -29,17 +29,29 @@
         GameOfLife.prototype.getCellIndex = function(x, y) {
             let index = x + y * this.width;
             return this.cells[index];
+
         }
 
         GameOfLife.prototype.setCellState = function(x, y, state) {
-            if (state === true) {
-                console.log(this.getCellIndex(x, y));
+            if (state === "live") {
+                this.getCellIndex(x, y).classList.add("live");
+            } else {
+                this.getCellIndex(x, y).classList.remove("live");
             }
         }
 
+        GameOfLife.prototype.firstGlider = function() {
+            this.setCellState(5, 2, "live");
+            this.setCellState(6, 2, "live");
+            this.setCellState(5, 1, "live");
+            this.setCellState(5, 0, "live");
+            this.setCellState(4, 0, "live");
+        }
+
         game.createBoard();
-        game.getCellIndex(5, 1);
-        game.setCellState(3, 4, true);
+        // game.getCellIndex(5, 1);
+        // game.setCellState(3, 4, "live");
+        game.firstGlider();
 
 
 

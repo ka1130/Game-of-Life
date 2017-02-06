@@ -54,9 +54,18 @@
 
         GameOfLife.prototype.computeCellNextState = function(x, y) {
             let neighbours = [this.getCellIndex(x - 1, y - 1), this.getCellIndex(x, y - 1), this.getCellIndex(x + 1, y - 1), this.getCellIndex(x - 1, y), this.getCellIndex(x + 1, y), this.getCellIndex(x - 1, y + 1), this.getCellIndex(x, y + 1), this.getCellIndex(x + 1, y + 1)];
-            let neighboursAlive = neighbours.filter(function(item) {
-                return item.classList.value === "live";
-            });
+            // let neighboursAlive = neighbours.filter(function(item) {
+
+            //     return item.classList.value === "live";
+            // });
+            let neighboursAlive = [];
+            for (neighbour of neighbours) {
+                if (neighbour == undefined || neighbour.classList.value == "") {
+                    continue;
+                } else {
+                    neighboursAlive.push(neighbour);
+                }
+            }
             let thisAlive = this.getCellIndex(x, y).classList.value === "live";
             console.log(thisAlive);
             let livingCount = neighboursAlive.count();
@@ -74,7 +83,17 @@
         }
 
         GameOfLife.prototype.computeNextGeneration = function() {
+            let states = [];
+            console.log(this.width, this.height);
+            for (let i = 0; i < this.height; i++) {
+                for (let j = 0; j < this.width; j++) {
+                    console.log(this.computeCellNextState(i, j));
+                }
 
+                // let element = this.cells[i].computeCellNextState();
+                // states.push(element);
+            }
+            console.log(states);
         }
 
         GameOfLife.prototype.printNextGeneration = function() {
@@ -86,6 +105,7 @@
         // game.setCellState(3, 4, "live");
         game.firstGlider();
         game.computeCellNextState(5, 1);
+        game.computeNextGeneration();
 
 
 

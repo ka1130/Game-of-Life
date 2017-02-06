@@ -8,15 +8,15 @@
 
         }
 
-        const game = new GameOfLife(10, 10);
+        const game = new GameOfLife(30, 30);
         console.log(game);
 
         GameOfLife.prototype.createBoard = function() {
-            const div = document.createElement("div");
-            this.board.appendChild(div);
-            this.width *= 10;
-            this.height *= 10;
-            console.log(this.width);
+
+            const divsCount = this.width * this.height;
+            for (let i = 0; i < divsCount; i++) {
+                this.board.appendChild(document.createElement("div"));
+            }
         };
 
         game.createBoard();

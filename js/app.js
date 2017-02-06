@@ -12,7 +12,7 @@
             this.cells = [];
         }
 
-        const game = new GameOfLife(30, 30);
+        const game = new GameOfLife(10, 10);
 
         GameOfLife.prototype.createBoard = function() {
             this.board.style.width = this.width * 10 + "px";
@@ -60,40 +60,35 @@
             // });
             let neighboursAlive = [];
             for (neighbour of neighbours) {
-                if (neighbour == undefined || neighbour.classList.value == "") {
+                if (typeof neighbour === "undefined" || neighbour.classList.value == "") {
                     continue;
                 } else {
                     neighboursAlive.push(neighbour);
                 }
             }
             let thisAlive = this.getCellIndex(x, y).classList.value === "live";
-            console.log(thisAlive);
             let livingCount = neighboursAlive.count();
 
             if (livingCount < 2) {
                 return 0;
-            } else if ((livingCount === 2 && thisAlive === true) || livingCount === 3) {
+            } else if ((livingCount === 2 && thisAlive === true) || (livingCount === 3 && thisAlive === true) || (livingCount === 3 && thisAlive === false)) {
                 return 1;
             } else if (livingCount > 3) {
                 return 0;
+            } else {
+                return 0;
             }
-            console.dir(this.getCellIndex(x, y).classList.value);
-            console.log(neighbours.count());
-            console.log(neighboursAlive.count());
         }
 
         GameOfLife.prototype.computeNextGeneration = function() {
             let states = [];
-            console.log(this.width, this.height);
             for (let i = 0; i < this.height; i++) {
                 for (let j = 0; j < this.width; j++) {
-                    console.log(this.computeCellNextState(i, j));
+                    states.push(this.computeCellNextState(i, j));
                 }
-
-                // let element = this.cells[i].computeCellNextState();
-                // states.push(element);
             }
             console.log(states);
+            return states;
         }
 
         GameOfLife.prototype.printNextGeneration = function() {

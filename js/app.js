@@ -1,6 +1,10 @@
 (function() {
     document.addEventListener("DOMContentLoaded", function(event) {
 
+        Array.prototype.count = function() {
+            return this.length;
+        };
+
         const GameOfLife = function(boardWidth, boardHeight) {
             this.width = boardWidth;
             this.height = boardHeight;
@@ -52,9 +56,12 @@
             let neighbours = [this.getCellIndex(x - 1, y - 1), this.getCellIndex(x, y - 1), this.getCellIndex(x + 1, y - 1), this.getCellIndex(x - 1, y), this.getCellIndex(x + 1, y), this.getCellIndex(x - 1, y + 1), this.getCellIndex(x, y + 1), this.getCellIndex(x + 1, y + 1)];
             console.log(neighbours);
             console.dir(this.getCellIndex(x, y));
+
+            console.log(neighboursAlive.length);
             neighbours.forEach(function(item, index) {
-                console.log(item.classList == true);
-                return (item.classList !== "");
+                item
+                console.log(item.classList.value === "live");
+                //return (item.classList !== "");
             });
         }
 

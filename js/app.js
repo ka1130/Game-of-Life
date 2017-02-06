@@ -9,7 +9,6 @@
         }
 
         const game = new GameOfLife(30, 30);
-        console.log(game);
 
         GameOfLife.prototype.createBoard = function() {
             this.board.style.width = this.width * 10 + "px";

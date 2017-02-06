@@ -23,9 +23,23 @@
                     this.classList.toggle("live");
                 });
             }
+
         };
 
+        GameOfLife.prototype.getCellIndex = function(x, y) {
+            let index = x + y * this.width;
+            return this.cells[index];
+        }
+
+        GameOfLife.prototype.setCellState = function(x, y, state) {
+            if (state === true) {
+                console.log(this.getCellIndex(x, y));
+            }
+        }
+
         game.createBoard();
+        game.getCellIndex(5, 1);
+        game.setCellState(3, 4, true);
 
 
 

@@ -5,7 +5,7 @@
             this.width = boardWidth;
             this.height = boardHeight;
             this.board = document.getElementById("board");
-
+            this.cells = [];
         }
 
         const game = new GameOfLife(30, 30);
@@ -18,6 +18,7 @@
             for (let i = 0; i < divsCount; i++) {
                 this.board.appendChild(document.createElement("div"));
             }
+            const cells = this.board.getElementsByTagName("div");
         };
 
         game.createBoard();

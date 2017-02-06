@@ -10,6 +10,7 @@
             this.height = boardHeight;
             this.board = document.getElementById("board");
             this.cells = [];
+            this.states = [];
         }
 
         const game = new GameOfLife(10, 10);
@@ -81,17 +82,18 @@
         }
 
         GameOfLife.prototype.computeNextGeneration = function() {
-            let states = [];
             for (let i = 0; i < this.height; i++) {
                 for (let j = 0; j < this.width; j++) {
-                    states.push(this.computeCellNextState(i, j));
+                    this.states.push(this.computeCellNextState(i, j));
                 }
             }
-            console.log(states);
-            return states;
+            console.log(this.states);
+            return this.states;
         }
 
         GameOfLife.prototype.printNextGeneration = function() {
+            console.log(this.cells, this.states);
+            const arr1 = this.cells;
 
         }
 
@@ -101,6 +103,7 @@
         game.firstGlider();
         game.computeCellNextState(5, 1);
         game.computeNextGeneration();
+        game.printNextGeneration();
 
 
 

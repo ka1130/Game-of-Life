@@ -54,15 +54,13 @@
 
         GameOfLife.prototype.computeCellNextState = function(x, y) {
             let neighbours = [this.getCellIndex(x - 1, y - 1), this.getCellIndex(x, y - 1), this.getCellIndex(x + 1, y - 1), this.getCellIndex(x - 1, y), this.getCellIndex(x + 1, y), this.getCellIndex(x - 1, y + 1), this.getCellIndex(x, y + 1), this.getCellIndex(x + 1, y + 1)];
-            console.log(neighbours);
-            console.dir(this.getCellIndex(x, y));
-
-            console.log(neighboursAlive.length);
-            neighbours.forEach(function(item, index) {
-                item
-                console.log(item.classList.value === "live");
-                //return (item.classList !== "");
+            let neighboursAlive = neighbours.filter(function(item) {
+                return item.classList.value === "live";
             });
+            console.dir(this.getCellIndex(x, y));
+            console.log(neighbours.count());
+            console.log(neighboursAlive.count());
+            return neighboursAlive.count();
         }
 
         GameOfLife.prototype.computeNextGeneration = function() {

@@ -31,8 +31,11 @@
         };
 
         GameOfLife.prototype.getCellIndex = function(x, y) {
-            let index = x + y * this.width;
-            return this.cells[index];
+            if (x >= 0 && y >= 0 && x < this.width && y < this.height) {
+                let index = x + y * this.width;
+                return this.cells[index];
+            }
+            return undefined;
         }
 
         GameOfLife.prototype.setCellState = function(x, y, state) {

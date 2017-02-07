@@ -25,7 +25,10 @@
             this.cells = this.board.getElementsByTagName("div");
             for (let i = 0; i < this.cells.length; i++) {
                 this.cells[i].addEventListener("mouseover", function(event) {
-                    this.classList.toggle("live");
+                    if (event.shiftKey) {
+                        this.classList.toggle("live");
+                    }
+
                 });
             }
         };

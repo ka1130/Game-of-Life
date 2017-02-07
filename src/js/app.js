@@ -48,6 +48,8 @@
             }
         }
 
+        //Add various structures
+
         GameOfLife.prototype.firstGlider = function() {
             this.setCellState(4, 2, "live");
             this.setCellState(5, 2, "live");
@@ -55,6 +57,18 @@
             this.setCellState(6, 1, "live");
             this.setCellState(5, 0, "live");
         }
+
+        GameofLife.prototype.smallExploder = function() {
+            this.setCellState(14, 7, "live");
+            this.setCellState(13, 8, "live");
+            this.setCellState(14, 8, "live");
+            this.setCellState(15, 8, "live");
+            this.setCellState(13, 9, "live");
+            this.setCellState(15, 9, "live");
+            this.setCellState(14, 10, "live");
+        }
+
+        //end of structures
 
         GameOfLife.prototype.computeCellNextState = function(x, y) {
             let neighbours = [this.getCellIndex(x - 1, y - 1), this.getCellIndex(x, y - 1), this.getCellIndex(x + 1, y - 1), this.getCellIndex(x - 1, y), this.getCellIndex(x + 1, y), this.getCellIndex(x - 1, y + 1), this.getCellIndex(x, y + 1), this.getCellIndex(x + 1, y + 1)];

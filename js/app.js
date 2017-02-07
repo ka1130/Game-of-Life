@@ -5,13 +5,14 @@
             return this.length;
         };
 
+        let self;
         const GameOfLife = function(boardWidth, boardHeight) {
             this.width = boardWidth;
             this.height = boardHeight;
             this.board = document.getElementById("board");
             this.cells = [];
             this.states = [];
-            const self = this;
+            self = this;
         }
 
         GameOfLife.prototype.createBoard = function() {
@@ -82,6 +83,7 @@
         }
 
         GameOfLife.prototype.computeNextGeneration = function() {
+            this.states = [];
             for (let i = 0; i < this.height; i++) {
                 for (let j = 0; j < this.width; j++) {
                     this.states.push(this.computeCellNextState(i, j));
@@ -94,9 +96,9 @@
         GameOfLife.prototype.printNextGeneration = function() {
             console.log(this.cells, this.states);
             for (let i = 0; i < this.states.length; i++) {
-                if (this.states[i] === 1) {
+                if (this.states[i] === 1 && this.cells[i] != undefined) {
                     this.cells[i].classList.add("live");
-                } else if (this.states[i] === 0) {
+                } else if (this.states[i] === 0 && this.cells[i] != undefined) {
                     this.cells[i].classList.remove("live");
                 }
                 console.log(this.states[i], this.cells[i]);
@@ -104,34 +106,26 @@
         }
 
         const play = document.getElementById("play");
+        const pause = document.getElementById("pause");
 
         function animateInterval() {
-            game.createBoard();
-            game.firstGlider();
-            game.computeCellNextState();
             game.computeNextGeneration();
             game.printNextGeneration();
         }
 
-        function animateGlider() {
-            const gameBoardWidth = prompt("Enter the board's width");
-            const gameBoardHeight = prompt("Enter the board's height");
-            const game = new GameOfLife(gameBoardWidth, gameBoardHeight);
 
-        }
+        const interval = setInterval(animateInterval, 1000);
 
+        play.addEventListener("click", interval, false);
+        pause.addEventListener("click", function(event) {
+            clearInterval(interval);
+        }, false);
 
-
-
-        play.addEventListener("click", animateGlider, false);
-
-
-        // game.createBoard();
-        // game.firstGlider();
-        // // game.computeCellNextState(5, 1);
-        // game.computeNextGeneration();
-        // game.printNextGeneration();
-
+        const gameBoardWidth = prompt("Enter the board's width");
+        const gameBoardHeight = prompt("Enter the board's height");
+        const game = new GameOfLife(gameBoardWidth, gameBoardHeight);
+        game.createBoard();
+        game.firstGlider();
 
 
 

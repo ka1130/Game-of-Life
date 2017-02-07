@@ -59,19 +59,28 @@
         }
 
         GameOfLife.prototype.lwss = function() {
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
+            this.setCellState(12, 7, "live");
+            this.setCellState(13, 7, "live");
+            this.setCellState(14, 7, "live");
+            this.setCellState(13, 8, "live");
+            this.setCellState(13, 9, "live");
+            this.setCellState(12, 10, "live");
+            this.setCellState(13, 10, "live");
+            this.setCellState(14, 10, "live");
+            this.setCellState(12, 12, "live");
+            this.setCellState(13, 12, "live");
+            this.setCellState(14, 12, "live");
+            this.setCellState(12, 13, "live");
+            this.setCellState(13, 13, "live");
+            this.setCellState(14, 13, "live");
+            this.setCellState(12, 15, "live");
+            this.setCellState(13, 15, "live");
+            this.setCellState(14, 15, "live");
+            this.setCellState(13, 16, "live");
+            this.setCellState(13, 17, "live");
+            this.setCellState(12, 18, "live");
+            this.setCellState(13, 18, "live");
+            this.setCellState(14, 18, "live");
         }
 
         GameOfLife.prototype.smallExploder = function() {
@@ -84,7 +93,7 @@
             this.setCellState(14, 10, "live");
         }
 
-        GameOfLife.prototype.exploder = function() {
+        GameOfLife.prototype.pulsar = function() {
             this.setCellState(11, 8, "live");
             this.setCellState(13, 8, "live");
             this.setCellState(9, 9, "live");
@@ -96,22 +105,6 @@
             this.setCellState(9, 12, "live");
             this.setCellState(11, 12, "live");
             this.setCellState(13, 12, "live");
-        }
-
-        GameOfLife.prototype.pulsar = function() {
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
         }
 
         GameOfLife.prototype.pentadecathlon = function() {
@@ -129,6 +122,23 @@
             this.setCellState(x, y, "live");
             this.setCellState(x, y, "live");
         }
+
+        GameOfLife.prototype.gosper = function() {
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+        }
+
 
         //end of structures
 

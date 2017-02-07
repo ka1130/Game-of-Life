@@ -1,0 +1,29 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#board {
+    min-height: 100px;
+    min-width: 100px;
+    align-self: center;
+    margin: 50px auto;
+    div {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #cccccc;
+        background-color: #ffffff;
+        float: left;
+    }
+    .live {
+        background-color: #000000;
+    }
+}
+
+#game-set {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+}

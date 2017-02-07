@@ -121,8 +121,10 @@
             clearInterval(interval);
         }, false);
 
-        const gameBoardWidth = prompt("Enter the board's width");
-        const gameBoardHeight = prompt("Enter the board's height");
+        // const gameBoardWidth = prompt("Enter the board's width");
+        // const gameBoardHeight = prompt("Enter the board's height");
+        const gameBoardWidth = 30;
+        const gameBoardHeight = 30;
         const game = new GameOfLife(gameBoardWidth, gameBoardHeight);
         game.createBoard();
         game.firstGlider();

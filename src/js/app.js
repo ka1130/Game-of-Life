@@ -81,6 +81,7 @@
         }
 
         GameOfLife.prototype.pulsar = function() {
+            this.setCellState(9, 8, "live");
             this.setCellState(11, 8, "live");
             this.setCellState(13, 8, "live");
             this.setCellState(9, 9, "live");
@@ -217,8 +218,9 @@
 
             for (let y = 0; y < this.height; y++) {
                 for (let x = 0; x < this.width; x++) {
-                    if (this.getCellIndex(x, y).classList.value === "live")
+                    if (this.getCellIndex(x, y).classList.value === "live") {
                         aliveList.push({ x, y });
+                    }
                 }
             }
             console.log(aliveList);
@@ -262,22 +264,46 @@
         const select = document.getElementById("select-structure");
         let selectedValue;
 
-
-        for (var i = 0; i < game.cells.length; i++) {
-            game.cells[i].addEventListener("click", function(event) {
-                console.log(this);
-                // game.cells[i].classList.toggle("live");
-            }, false);
-
+        function clearBoard() {
+            for (const child of game.board.children) {
+                child.classList.remove("live");
+            }
         }
+
 
         select.addEventListener("change", function(event) {
             selectedValue = select.value;
-            if (selectedValue === "glider") {
-                //game.firstGlider();
-                console.log(selectedValue);
-                console.log(game.cells);
+
+            switch (selectedValue) {
+                case "glider":
+                    clearBoard();
+                    game.firstGlider();
+                    break;
+                case "lwss":
+                    clearBoard();
+                    game.lwss();
+                    break;
+                case "small-exploder":
+                    clearBoard();
+                    game.smallExploder();
+                    break;
+                case "pulsar":
+                    clearBoard();
+                    game.pulsar();
+                    break;
+                case "pentadecathlon":
+                    clearBoard();
+                    game.pentadecathlon();
+                    break;
+                case "gosper":
+                    clearBoard();
+                    game.gosper();
+                    break;
+                default:
+                    clearBoard();
+                    game.firstGlider();
             }
+
 
         }, false);
 

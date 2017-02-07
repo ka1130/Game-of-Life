@@ -115,20 +115,24 @@
 
 
         const interval = setInterval(animateInterval, 200);
+        let game;
 
         play.addEventListener("click", interval, false);
         pause.addEventListener("click", function(event) {
             clearInterval(interval);
         }, false);
 
-        // const gameBoardWidth = prompt("Enter the board's width");
-        // const gameBoardHeight = prompt("Enter the board's height");
-        const gameBoardWidth = 30;
-        const gameBoardHeight = 30;
-        const game = new GameOfLife(gameBoardWidth, gameBoardHeight);
-        game.createBoard();
-        game.firstGlider();
+        function startGame() {
+            // const gameBoardWidth = prompt("Enter the board's width");
+            // const gameBoardHeight = prompt("Enter the board's height");
+            const gameBoardWidth = 30;
+            const gameBoardHeight = 30;
+            game = new GameOfLife(gameBoardWidth, gameBoardHeight);
+            game.createBoard();
+            game.firstGlider();
+        }
 
+        startGame();
 
 
     });

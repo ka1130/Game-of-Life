@@ -117,15 +117,16 @@
         }
 
         function interval() {
-            setInterval(animateInterval, 200);
+            var intervalAnimation = setInterval(animateInterval, 200);
+            pause.addEventListener("click", function(event) {
+                clearInterval(intervalAnimation);
+            }, false);
         }
 
         let game;
 
         play.addEventListener("click", interval, false);
-        pause.addEventListener("click", function(event) {
-            clearInterval(interval);
-        }, false);
+
 
         function startGame() {
             // const gameBoardWidth = prompt("Enter the board's width");

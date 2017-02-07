@@ -1,0 +1,30 @@
+{
+  "name": "impossible-generator",
+  "version": "1.0.0",
+  "description": "Impossible generator is a simple fun app that converts uploaded photo into a polaroid-styled one. Adjust it up to your taste and enjoy!",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ka1130/impossible-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ka1130/impossible-generator/issues"
+  },
+  "homepage": "https://github.com/ka1130/impossible-generator#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4"
+  }
+}

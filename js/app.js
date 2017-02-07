@@ -11,9 +11,8 @@
             this.board = document.getElementById("board");
             this.cells = [];
             this.states = [];
+            const self = this;
         }
-
-        const game = new GameOfLife(10, 10);
 
         GameOfLife.prototype.createBoard = function() {
             this.board.style.width = this.width * 10 + "px";
@@ -28,13 +27,11 @@
                     this.classList.toggle("live");
                 });
             }
-
         };
 
         GameOfLife.prototype.getCellIndex = function(x, y) {
             let index = x + y * this.width;
             return this.cells[index];
-
         }
 
         GameOfLife.prototype.setCellState = function(x, y, state) {
@@ -55,10 +52,7 @@
 
         GameOfLife.prototype.computeCellNextState = function(x, y) {
             let neighbours = [this.getCellIndex(x - 1, y - 1), this.getCellIndex(x, y - 1), this.getCellIndex(x + 1, y - 1), this.getCellIndex(x - 1, y), this.getCellIndex(x + 1, y), this.getCellIndex(x - 1, y + 1), this.getCellIndex(x, y + 1), this.getCellIndex(x + 1, y + 1)];
-            // let neighboursAlive = neighbours.filter(function(item) {
 
-            //     return item.classList.value === "live";
-            // });
             let neighboursAlive = [];
             for (neighbour of neighbours) {
                 if (typeof neighbour === "undefined" || neighbour.classList.value == "") {
@@ -67,7 +61,13 @@
                     neighboursAlive.push(neighbour);
                 }
             }
-            let thisAlive = this.getCellIndex(x, y).classList.value === "live";
+
+            let thisAlive;
+
+            if (x >= 0 && y >= 0) {
+                thisAlive = this.getCellIndex(x, y).classList.value === "live";
+            }
+
             let livingCount = neighboursAlive.count();
 
             if (livingCount < 2) {
@@ -103,13 +103,34 @@
             }
         }
 
-        game.createBoard();
-        // game.getCellIndex(5, 1);
-        // game.setCellState(3, 4, "live");
-        game.firstGlider();
-        game.computeCellNextState(5, 1);
-        game.computeNextGeneration();
-        game.printNextGeneration();
+        const play = document.getElementById("play");
+
+        function animateInterval() {
+            game.createBoard();
+            game.firstGlider();
+            game.computeCellNextState();
+            game.computeNextGeneration();
+            game.printNextGeneration();
+        }
+
+        function animateGlider() {
+            const gameBoardWidth = prompt("Enter the board's width");
+            const gameBoardHeight = prompt("Enter the board's height");
+            const game = new GameOfLife(gameBoardWidth, gameBoardHeight);
+
+        }
+
+
+
+
+        play.addEventListener("click", animateGlider, false);
+
+
+        // game.createBoard();
+        // game.firstGlider();
+        // // game.computeCellNextState(5, 1);
+        // game.computeNextGeneration();
+        // game.printNextGeneration();
 
 
 

@@ -45,10 +45,10 @@
 
         GameOfLife.prototype.firstGlider = function() {
             this.setCellState(5, 2, "live");
-            this.setCellState(6, 2, "live");
-            this.setCellState(5, 1, "live");
-            this.setCellState(5, 0, "live");
-            this.setCellState(4, 0, "live");
+            this.setCellState(5, 3, "live");
+            this.setCellState(5, 4, "live");
+            this.setCellState(6, 4, "live");
+            this.setCellState(4, 3, "live");
         }
 
         GameOfLife.prototype.computeCellNextState = function(x, y) {
@@ -111,7 +111,7 @@
         }
 
 
-        const interval = setInterval(animateInterval, 500);
+        const interval = setInterval(animateInterval, 200);
 
         play.addEventListener("click", interval, false);
         pause.addEventListener("click", function(event) {

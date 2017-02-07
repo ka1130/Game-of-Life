@@ -15,12 +15,15 @@
     min-width: 100px;
     align-self: center;
     margin: 50px auto;
+    display: table;
+    border-collapse: collapse;
     div {
         width: 10px;
         height: 10px;
-        border: 1px solid #cccccc;
-        background-color: #ffffff;
+        border: .5px solid #fff;
+        background-color: rgba(255, 255, 255, 0.6);
         float: left;
+        display: table-cell;
     }
     .live {
         background-color: #000000;

@@ -24,7 +24,7 @@
             }
             this.cells = this.board.getElementsByTagName("div");
             for (let i = 0; i < this.cells.length; i++) {
-                this.cells[i].addEventListener("click", function(event) {
+                this.cells[i].addEventListener("mouseover", function(event) {
                     this.classList.toggle("live");
                 });
             }
@@ -86,7 +86,7 @@
             this.states = [];
             for (let i = 0; i < this.height; i++) {
                 for (let j = 0; j < this.width; j++) {
-                    this.states.push(this.computeCellNextState(i, j));
+                    this.states.push(this.computeCellNextState(j, i));
                 }
             }
             console.log(this.states);
@@ -114,7 +114,7 @@
         }
 
 
-        const interval = setInterval(animateInterval, 1000);
+        const interval = setInterval(animateInterval, 500);
 
         play.addEventListener("click", interval, false);
         pause.addEventListener("click", function(event) {

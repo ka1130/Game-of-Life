@@ -140,6 +140,15 @@
 
         startGame();
 
+        // Get values from inputs
+        const select = document.getElementById("select-structure");
+        let selectedValue;
+
+        select.addEventListener("change", function(event) {
+            selectedValue = select.value;
+            console.log(selectedValue);
+        }, false);
+
 
     });
 })();

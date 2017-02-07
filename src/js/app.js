@@ -24,7 +24,7 @@
             }
             this.cells = this.board.getElementsByTagName("div");
             for (let i = 0; i < this.cells.length; i++) {
-                this.cells[i].addEventListener("mouseover", function(event) {
+                this.cells[i].addEventListener("click", function(event) {
                     if (event.shiftKey) {
                         this.classList.toggle("live");
                     }
@@ -110,8 +110,8 @@
         GameOfLife.prototype.showAliveCoordinates = function() {
             let aliveList = [];
 
-            for (let y = 0; y < gameBoardHeight; y++) {
-                for (let x = 0; x < gameBoardWidth; x++) {
+            for (let y = 0; y < this.height; y++) {
+                for (let x = 0; x < this.width; x++) {
                     if (this.getCellIndex(x, y).classList.value === "live")
                         aliveList.push({ x, y });
                 }
@@ -125,9 +125,11 @@
         function animateInterval() {
             game.computeNextGeneration();
             game.printNextGeneration();
+
         }
 
         function interval() {
+            // game.showAliveCoordinates();
             var intervalAnimation = setInterval(animateInterval, 200);
             pause.addEventListener("click", function(event) {
                 clearInterval(intervalAnimation);

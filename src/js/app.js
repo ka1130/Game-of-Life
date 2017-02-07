@@ -58,7 +58,23 @@
             this.setCellState(5, 0, "live");
         }
 
-        GameofLife.prototype.smallExploder = function() {
+        GameOfLife.prototype.lwss = function() {
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+        }
+
+        GameOfLife.prototype.smallExploder = function() {
             this.setCellState(14, 7, "live");
             this.setCellState(13, 8, "live");
             this.setCellState(14, 8, "live");
@@ -66,6 +82,52 @@
             this.setCellState(13, 9, "live");
             this.setCellState(15, 9, "live");
             this.setCellState(14, 10, "live");
+        }
+
+        GameOfLife.prototype.exploder = function() {
+            this.setCellState(11, 8, "live");
+            this.setCellState(13, 8, "live");
+            this.setCellState(9, 9, "live");
+            this.setCellState(13, 9, "live");
+            this.setCellState(9, 10, "live");
+            this.setCellState(13, 10, "live");
+            this.setCellState(9, 11, "live");
+            this.setCellState(13, 11, "live");
+            this.setCellState(9, 12, "live");
+            this.setCellState(11, 12, "live");
+            this.setCellState(13, 12, "live");
+        }
+
+        GameOfLife.prototype.pulsar = function() {
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+        }
+
+        GameOfLife.prototype.pentadecathlon = function() {
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
+            this.setCellState(x, y, "live");
         }
 
         //end of structures
@@ -143,7 +205,7 @@
         }
 
         function interval() {
-            // game.showAliveCoordinates();
+            game.showAliveCoordinates();
             var intervalAnimation = setInterval(animateInterval, 200);
             pause.addEventListener("click", function(event) {
                 clearInterval(intervalAnimation);
@@ -162,7 +224,7 @@
             const gameBoardHeight = 30;
             game = new GameOfLife(gameBoardWidth, gameBoardHeight);
             game.createBoard();
-            game.firstGlider();
+            // game.firstGlider();
         }
 
         startGame();

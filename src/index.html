@@ -14,13 +14,28 @@
 
 <body>
     <div class="flex-container">
-        <p>Hold Shift and move over the board to make the cells alive or dead.</p>
-        <section id="board">
-        </section>
-        <section id="game-set">
-            <button id="play" type="button" class="btn btn-primary">Play</button>
-            <button id="pause" type="button" class="btn btn-outline-secondary">Pause</button>
-        </section>
+        <p>Hold Shift and mouse over the board to make the cells alive or dead.</p>
+        <div class="form-group">
+            <select class="form-control" name="structures" form="structures">
+                    <option value="glider">Glider</option>
+                    <option value="lwss">Lightweight spaceship (LWSS)</option>
+                    <option value="pulsar">Pulsar (period 3)</option>
+                    <option value="pentadecathlon">Pentadecathlon (period 15)</option>
+                </select>
+        </div>
+        <div class="game-wrapper">
+            <div id="board">
+            </div>
+            <div id="game-set">
+                <!--<form action="" id="structures">
+                    <!--Firstname:<input type="text" name="fname">-->
+                <!--<input type="submit">-->
+                <!--</form>
+                <br>-->
+                <button id="play" type="button" class="btn btn-primary">Play</button>
+                <button id="pause" type="button" class="btn btn-outline-secondary">Pause</button>
+            </div>
+        </div>
     </div>
 </body>
 

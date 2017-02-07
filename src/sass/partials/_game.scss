@@ -13,13 +13,21 @@
     }
 }
 
+.game-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #board {
     min-height: 100px;
     min-width: 100px;
     align-self: center;
-    margin: 50px auto;
+    margin: 20px auto;
     display: table;
     border-collapse: collapse;
+    border-radius: 5px;
     div {
         width: 10px;
         height: 10px;

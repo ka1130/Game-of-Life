@@ -89,19 +89,16 @@
                     this.states.push(this.computeCellNextState(j, i));
                 }
             }
-            console.log(this.states);
             return this.states;
         }
 
         GameOfLife.prototype.printNextGeneration = function() {
-            console.log(this.cells, this.states);
             for (let i = 0; i < this.states.length; i++) {
                 if (this.states[i] === 1 && this.cells[i] != undefined) {
                     this.cells[i].classList.add("live");
                 } else if (this.states[i] === 0 && this.cells[i] != undefined) {
                     this.cells[i].classList.remove("live");
                 }
-                console.log(this.states[i], this.cells[i]);
             }
         }
 

@@ -28,7 +28,6 @@
                     if (event.shiftKey) {
                         this.classList.toggle("live");
                     }
-
                 });
             }
         };
@@ -108,6 +107,18 @@
             }
         }
 
+        GameOfLife.prototype.showAliveCoordinates = function() {
+            let aliveList = [];
+
+            for (let y = 0; y < gameBoardHeight; y++) {
+                for (let x = 0; x < gameBoardWidth; x++) {
+                    if (this.getCellIndex(x, y).classList.value === "live")
+                        aliveList.push({ x, y });
+                }
+            }
+            console.log(aliveList);
+        }
+
         const play = document.getElementById("play");
         const pause = document.getElementById("pause");
 
@@ -144,10 +155,32 @@
         const select = document.getElementById("select-structure");
         let selectedValue;
 
+
+        for (var i = 0; i < game.cells.length; i++) {
+            game.cells[i].addEventListener("click", function(event) {
+                console.log(this);
+                // game.cells[i].classList.toggle("live");
+            }, false);
+
+        }
+
         select.addEventListener("change", function(event) {
             selectedValue = select.value;
-            console.log(selectedValue);
+            if (selectedValue === "glider") {
+                //game.firstGlider();
+                console.log(selectedValue);
+                console.log(game.cells);
+            }
+
         }, false);
+
+        // GameOfLife.prototype.firstGlider = function() {
+        //     this.setCellState(4, 2, "live");
+        //     this.setCellState(5, 2, "live");
+        //     this.setCellState(6, 2, "live");
+        //     this.setCellState(6, 1, "live");
+        //     this.setCellState(5, 0, "live");
+        // }
 
 
     });

@@ -24,7 +24,7 @@
             }
             this.cells = this.board.getElementsByTagName("div");
             for (let i = 0; i < this.cells.length; i++) {
-                this.cells[i].addEventListener("click", function(event) {
+                this.cells[i].addEventListener("mouseover", function(event) {
                     if (event.shiftKey) {
                         this.classList.toggle("live");
                     }
@@ -234,7 +234,7 @@
         }
 
         function interval() {
-            game.showAliveCoordinates();
+            // game.showAliveCoordinates();
             var intervalAnimation = setInterval(animateInterval, 200);
             pause.addEventListener("click", function(event) {
                 clearInterval(intervalAnimation);
@@ -253,7 +253,7 @@
             const gameBoardHeight = 40;
             game = new GameOfLife(gameBoardWidth, gameBoardHeight);
             game.createBoard();
-            // game.firstGlider();
+            game.firstGlider();
         }
 
         startGame();

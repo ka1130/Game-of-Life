@@ -120,19 +120,42 @@
         }
 
         GameOfLife.prototype.gosper = function() {
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
-            this.setCellState(x, y, "live");
+            this.setCellState(25, 9, "live");
+            this.setCellState(23, 10, "live");
+            this.setCellState(25, 10, "live");
+            this.setCellState(13, 11, "live");
+            this.setCellState(14, 11, "live");
+            this.setCellState(21, 11, "live");
+            this.setCellState(22, 11, "live");
+            this.setCellState(35, 11, "live");
+            this.setCellState(36, 11, "live");
+            this.setCellState(12, 12, "live");
+            this.setCellState(16, 12, "live");
+            this.setCellState(21, 12, "live");
+            this.setCellState(22, 12, "live");
+            this.setCellState(35, 12, "live");
+            this.setCellState(36, 12, "live");
+            this.setCellState(1, 13, "live");
+            this.setCellState(2, 13, "live");
+            this.setCellState(11, 13, "live");
+            this.setCellState(17, 13, "live");
+            this.setCellState(21, 13, "live");
+            this.setCellState(22, 13, "live");
+            this.setCellState(1, 14, "live");
+            this.setCellState(2, 14, "live");
+            this.setCellState(11, 14, "live");
+            this.setCellState(15, 14, "live");
+            this.setCellState(17, 14, "live");
+            this.setCellState(18, 14, "live");
+            this.setCellState(23, 14, "live");
+            this.setCellState(25, 14, "live");
+            this.setCellState(11, 15, "live");
+            this.setCellState(17, 15, "live");
+            this.setCellState(25, 15, "live");
+            this.setCellState(12, 16, "live");
+            this.setCellState(16, 16, "live");
+            this.setCellState(13, 17, "live");
+            this.setCellState(14, 17, "live");
         }
 
 
@@ -226,8 +249,8 @@
         function startGame() {
             // const gameBoardWidth = prompt("Enter the board's width");
             // const gameBoardHeight = prompt("Enter the board's height");
-            const gameBoardWidth = 30;
-            const gameBoardHeight = 30;
+            const gameBoardWidth = 40;
+            const gameBoardHeight = 40;
             game = new GameOfLife(gameBoardWidth, gameBoardHeight);
             game.createBoard();
             // game.firstGlider();

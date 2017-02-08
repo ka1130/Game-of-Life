@@ -20,6 +20,11 @@
     flex-direction: column;
 }
 
+.button-wrapper {
+    display: flex;
+    align-content: center;
+}
+
 #board {
     min-height: 100px;
     min-width: 100px;
@@ -62,4 +67,25 @@
 
 #speed {
     direction: rtl;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 2px;
+    background: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #43b1d6;
+    border: 3px solid #fff;
+    z-index: 3;
+    cursor: pointer;
 }

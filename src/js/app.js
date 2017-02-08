@@ -245,8 +245,8 @@
             if (pauseClicked === true) {
                 return;
             }
-            setTimeout(interval, speedRate);
 
+            setTimeout(interval, speedRate);
         }
 
         let game;
@@ -254,11 +254,13 @@
         play.addEventListener("click", function(event) {
             pauseClicked = false;
             setTimeout(interval, speedRate);
+            play.setAttribute("disabled", true);
         }, false);
 
         pause.addEventListener("click", function(event) {
             clearTimeout(interval);
             pauseClicked = true;
+            play.removeAttribute("disabled", true);
         }, false);
 
         function startGame() {
@@ -285,7 +287,6 @@
         const speed = document.getElementById("speed");
 
         speed.addEventListener("change", (event) => {
-            console.log(event.target.value);
             speedRate = event.target.value;
         });
 
@@ -323,11 +324,7 @@
                     game.firstGlider();
             }
 
-
         }, false);
-
-
-
 
     });
 })();

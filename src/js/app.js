@@ -309,8 +309,8 @@
 
         const speed = document.getElementById("speed");
 
-        speed.addEventListener("change", () => {
-            console.log("ok");
+        speed.addEventListener("change", (event) => {
+            console.log(event.target.value);
         })
 
 

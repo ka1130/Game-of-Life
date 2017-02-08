@@ -252,13 +252,13 @@
         let game;
 
         play.addEventListener("click", function(event) {
+            pauseClicked = false;
             setTimeout(interval, speedRate);
         }, false);
 
         pause.addEventListener("click", function(event) {
             clearTimeout(interval);
             pauseClicked = true;
-            console.log(interval);
         }, false);
 
         function startGame() {
@@ -286,7 +286,7 @@
 
         speed.addEventListener("change", (event) => {
             console.log(event.target.value);
-            speedRate = event.target.value * 100;
+            speedRate = event.target.value;
         });
 
 

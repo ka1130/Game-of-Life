@@ -307,13 +307,11 @@
 
         }, false);
 
-        // GameOfLife.prototype.firstGlider = function() {
-        //     this.setCellState(4, 2, "live");
-        //     this.setCellState(5, 2, "live");
-        //     this.setCellState(6, 2, "live");
-        //     this.setCellState(6, 1, "live");
-        //     this.setCellState(5, 0, "live");
-        // }
+        const speed = document.getElementById("speed");
+
+        speed.addEventListener("change", () => {
+            console.log("ok");
+        })
 
 
     });

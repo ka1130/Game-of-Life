@@ -37,7 +37,11 @@
         display: table-cell;
     }
     .live {
-        background-color: #000000;
+        background: #0074a6;
+        background: -webkit-radial-gradient(circle, #0074a6, #013d5f);
+        background: -o-radial-gradient(circle, #0074a6, #013d5f);
+        background: -moz-radial-gradient(circle, #0074a6, #013d5f);
+        background: radial-gradient(circle, #0074a6, #013d5f);
     }
 }
 

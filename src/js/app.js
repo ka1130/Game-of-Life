@@ -235,9 +235,11 @@
 
         }
 
+        let speedRate = 200;
+
         function interval() {
             // game.showAliveCoordinates();
-            var intervalAnimation = setInterval(animateInterval, 200);
+            var intervalAnimation = setInterval(animateInterval, speedRate);
             pause.addEventListener("click", function(event) {
                 clearInterval(intervalAnimation);
             }, false);
@@ -249,8 +251,6 @@
 
 
         function startGame() {
-            // const gameBoardWidth = prompt("Enter the board's width");
-            // const gameBoardHeight = prompt("Enter the board's height");
             const gameBoardWidth = 40;
             const gameBoardHeight = 40;
             game = new GameOfLife(gameBoardWidth, gameBoardHeight);
@@ -311,6 +311,7 @@
 
         speed.addEventListener("change", (event) => {
             console.log(event.target.value);
+            speedRate = event.target.value * 100;
         })
 
 

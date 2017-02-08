@@ -286,7 +286,7 @@
 
         const speed = document.getElementById("speed");
 
-        speed.addEventListener("change", (event) => {
+        speed.addEventListener("input", (event) => {
             speedRate = event.target.value;
         });
 

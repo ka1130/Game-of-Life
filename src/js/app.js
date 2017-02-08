@@ -240,7 +240,7 @@
 
         function interval() {
             // game.showAliveCoordinates();
-            window.setTimeout(animateInterval, speedRate);
+            window.setInterval(animateInterval, speedRate);
             // intervalAnimation = setInterval(animateInterval, speedRate);
             pause.addEventListener("click", function(event) {
                 //clearInterval(intervalAnimation);

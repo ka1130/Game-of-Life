@@ -236,20 +236,30 @@
         }
 
         let speedRate = 200;
-        let intervalAnimation;
+        let pauseClicked;
 
-        function interval() {
+        const interval = function() {
+            game.computeNextGeneration();
+            game.printNextGeneration();
             // game.showAliveCoordinates();
-            window.setInterval(animateInterval, speedRate);
-            // intervalAnimation = setInterval(animateInterval, speedRate);
-            pause.addEventListener("click", function(event) {
-                //clearInterval(intervalAnimation);
-            }, false);
+            if (pauseClicked === true) {
+                return;
+            }
+            setTimeout(interval, speedRate);
+
         }
 
         let game;
 
-        play.addEventListener("click", interval, false);
+        play.addEventListener("click", function(event) {
+            setTimeout(interval, speedRate);
+        }, false);
+
+        pause.addEventListener("click", function(event) {
+            clearTimeout(interval);
+            pauseClicked = true;
+            console.log(interval);
+        }, false);
 
         function startGame() {
             const gameBoardWidth = 40;

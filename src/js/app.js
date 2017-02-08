@@ -236,19 +236,20 @@
         }
 
         let speedRate = 200;
+        let intervalAnimation;
 
         function interval() {
             // game.showAliveCoordinates();
-            var intervalAnimation = setInterval(animateInterval, speedRate);
+            window.setTimeout(animateInterval, speedRate);
+            // intervalAnimation = setInterval(animateInterval, speedRate);
             pause.addEventListener("click", function(event) {
-                clearInterval(intervalAnimation);
+                //clearInterval(intervalAnimation);
             }, false);
         }
 
         let game;
 
         play.addEventListener("click", interval, false);
-
 
         function startGame() {
             const gameBoardWidth = 40;
@@ -261,6 +262,7 @@
         startGame();
 
         // Get values from inputs
+
         const select = document.getElementById("select-structure");
         let selectedValue;
 
@@ -269,6 +271,13 @@
                 child.classList.remove("live");
             }
         }
+
+        const speed = document.getElementById("speed");
+
+        speed.addEventListener("change", (event) => {
+            console.log(event.target.value);
+            speedRate = event.target.value * 100;
+        });
 
 
         select.addEventListener("change", function(event) {
@@ -307,12 +316,7 @@
 
         }, false);
 
-        const speed = document.getElementById("speed");
 
-        speed.addEventListener("change", (event) => {
-            console.log(event.target.value);
-            speedRate = event.target.value * 100;
-        })
 
 
     });

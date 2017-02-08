@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../img/blue-abstract-glass-balls.jpg);
+    background-image: url(../img/dna-1811955_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -43,9 +43,15 @@
 
 #game-set {
     display: flex;
-    align-self: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
     margin: 0 auto;
     button {
-        margin: 0 10px;
+        margin: 0 10px 0 0;
+    }
+    i {
+        color: #fff;
+        margin-right: 5px;
     }
 }

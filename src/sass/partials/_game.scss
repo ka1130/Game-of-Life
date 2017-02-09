@@ -27,12 +27,18 @@
 
 #board {
     align-self: center;
-    margin: 20px auto;
+    margin: 20px -5px 20px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-sizing: content-box;
     &:after {
         content: "";
         clear: both;

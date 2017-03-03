@@ -1,10 +1,6 @@
 (function() {
     document.addEventListener("DOMContentLoaded", function(event) {
 
-        Array.prototype.count = function() {
-            return this.length;
-        };
-
         let self;
         const GameOfLife = function(boardWidth, boardHeight) {
             this.width = boardWidth;
@@ -180,7 +176,7 @@
                 thisAlive = this.getCellIndex(x, y).classList.value === "live";
             }
 
-            let livingCount = neighboursAlive.count();
+            let livingCount = neighboursAlive.length;
 
             if (livingCount < 2) {
                 return 0;
